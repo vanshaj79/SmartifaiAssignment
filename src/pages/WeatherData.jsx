@@ -11,10 +11,9 @@ const WeatherData = () => {
 
   //Fetch function
   const fetchData = async (countryName) => {
-    
     try {
       setloading(true);
-      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=2a49adbfbcb6490b9c5163642240506&q=${countryName}&aqi=yes`);
+      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=d7177c4764ed4e36a00192654240806&q=${countryName}&aqi=yes`);
       const finalData = await response.json();
       setloading(false);
       setweatherData({ ...finalData });
