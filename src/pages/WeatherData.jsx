@@ -230,7 +230,7 @@ const WeatherData = () => {
         </div>
         <div className="grid grid-cols-12 pt-4">
           <div className="lg:col-span-6 md:col-span-8 col-span-12 bg-gray-300 rounded-md">
-            <div className="flex">=
+            <div className="flex">
             <Chart
               options={state.options}
               series={state.series}
