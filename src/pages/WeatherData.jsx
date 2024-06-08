@@ -14,7 +14,7 @@ const WeatherData = () => {
     
     try {
       setloading(true);
-      const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=2a49adbfbcb6490b9c5163642240506&q=${countryName}&aqi=yes`);
+      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=2a49adbfbcb6490b9c5163642240506&q=${countryName}&aqi=yes`);
       const finalData = await response.json();
       setloading(false);
       setweatherData({ ...finalData });
