@@ -11,15 +11,17 @@ const WeatherData = () => {
 
   //Fetch function
   const fetchData = async (countryName) => {
-    setloading(true);
-    const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=2a49adbfbcb6490b9c5163642240506&q=${countryName}&aqi=yes`
-    );
-    const finalData = await response.json();
-
-    setloading(false);
-    setweatherData({ ...finalData });
-    setairQuality(finalData?.current?.air_quality);
+    
+    try {
+      setloading(true);
+      const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=2a49adbfbcb6490b9c5163642240506&q=${countryName}&aqi=yes`);
+      const finalData = await response.json();
+      setloading(false);
+      setweatherData({ ...finalData });
+      setairQuality(finalData?.current?.air_quality);
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+    }
   };
   console.log(WeatherData,"weather")
 
